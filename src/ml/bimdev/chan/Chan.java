@@ -12,10 +12,6 @@ public class Chan {
         return result;
     }
 
-    /* Checks the output returned by Jarvis March algorithm and checks which list of points i.e which sub-Convex hull
-     * has the extreme point and returns the index of the List and the Point in that list.
-     * The latter will always be 0 because of the property of Jarvis March Algorithm. i.e. It returns the points in
-     * Counter Clock-wise order starting from the left-bottom most (extreme point). */
     private static List<Integer> findExtreme(List<List<Point>> points) {
         List<Integer> extreme_index = new ArrayList<>();
         Point p = new Point(points.get(0).get(0));
@@ -34,8 +30,6 @@ public class Chan {
         return extreme_index;
     }
 
-    /* Performs binary search on a sub-Convex hull to check which half contains the correct tangent. The necessary condition for this
-     * is that the points in the sub-Convex hull must be in Counter Clockwise order. */
     private static int findTangent(List<Point> points, Point p) {
         int left = 0;
         int mid;
@@ -74,8 +68,6 @@ public class Chan {
         return left;
     }
 
-    /* Finds the next Point to be in the final Convex hull by finding tangents from the previous point in
-     * the Convex hull (initially the extreme point) to all other sub-Convex hulls and choosing the correct one */
     private static List<Integer> nextPoint(List<List<Point>> points, List<Integer> list) {
         Point p = new Point(points.get(list.get(0)).get(list.get(1)));
         List<Integer> next = new ArrayList<>();
@@ -103,7 +95,6 @@ public class Chan {
         return next;
     }
 
-    /* Given a set of points, computes the convex hull */
     public static List<Point> convexHull(List<Point> points) {
         List<Point> sub;
         int m = 1, t = 0;

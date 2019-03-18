@@ -1,7 +1,5 @@
 package ml.bimdev.chan;
 
-import ml.bimdev.Config;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
