@@ -13,21 +13,17 @@ public class JarvisMarch {
         Point q = new Point(extreme);
 
         while (true) {
-            Point r = new Point();
             for (Point point : points) {
-                if ((point.x == p.x) && (point.y == p.y)) {
+                if (point.equals(p)) {
                     continue;
                 }
-                r.x = point.x;
-                r.y = point.y;
-                int turn = Util.orientation(p, q, r);
-                double dist = Util.compare(Util.dist(p, r), Util.dist(p, q));
+                int turn = Util.orientation(p, q, point);
+                double dist = Double.compare(Util.dist(p, point), Util.dist(p, q));
                 if (turn == -1 || turn == 0 && dist == 1) {
-                    q.x = r.x;
-                    q.y = r.y;
+                    q = point;
                 }
             }
-            if ((q.x == result.get(0).x) && (q.y == result.get(0).y)) {
+            if (result.get(0).equals(q)) {
                 break;
             }
             result.add(new Point(q));

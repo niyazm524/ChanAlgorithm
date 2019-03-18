@@ -85,7 +85,7 @@ public class Chan {
                 q = new Point(points.get(next.get(0)).get(next.get(1)));
                 r = new Point(points.get(i).get(j));
                 int turn = Util.orientation(p, q, r);
-                double dist = Util.compare(Util.dist(p, r), Util.dist(p, q));
+                double dist = Double.compare(Util.dist(p, r), Util.dist(p, q));
                 if (turn == -1 || turn == 0 && dist == 1) {
                     next.set(0, i);
                     next.set(1, j);

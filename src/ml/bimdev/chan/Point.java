@@ -4,10 +4,6 @@ public class Point {
     int x;
     int y;
 
-    Point() {
-
-    }
-
     Point(Point p) {
         this.x = p.x;
         this.y = p.y;
@@ -26,7 +22,7 @@ public class Point {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Point)) return false;
 
         Point point = (Point) o;
 

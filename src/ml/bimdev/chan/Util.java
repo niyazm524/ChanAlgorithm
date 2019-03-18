@@ -11,13 +11,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Util {
-    static int compare(double a, double b) {
-        if (a > b)
-            return 1;
-        else if (a < b)
-            return -1;
-        return 0;
-    }
 
     static double dist(Point p, Point q) {
         double dx = q.x - p.x;
@@ -26,7 +19,7 @@ public class Util {
     }
 
     static int orientation(Point p, Point q, Point r) {
-        return compare(((q.x - p.x) * (r.y - p.y)) - ((q.y - p.y) * (r.x - p.x)), 0);
+        return Integer.compare(((q.x - p.x) * (r.y - p.y)) - ((q.y - p.y) * (r.x - p.x)), 0);
     }
 
     static Point findExtreme(List<Point> points) {
