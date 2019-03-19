@@ -4,12 +4,12 @@ public class Point {
     int x;
     int y;
 
-    Point(Point p) {
+    public Point(Point p) {
         this.x = p.x;
         this.y = p.y;
     }
 
-    Point(int x, int y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
