@@ -31,7 +31,7 @@ public class StartBenchThread extends Thread {
             long stopTime = System.nanoTime();
             System.out.println("h: " + h);
             Platform.runLater(() -> {
-                transfer.add(n, (stopTime - startTime) / 100000, h);
+                transfer.add(n, (stopTime - startTime) / 1000000, h);
             });
             n += Config.INCREMENT;
             try {
